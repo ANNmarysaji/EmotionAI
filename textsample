@@ -1,0 +1,69 @@
+HOMEO VARIABLES AND DRIVES
+----------------------------------------
+time 
+ideal :15 sec , decreasing by 1 for each second passed
+|
+urgency : magnitude increases from 0 10 15 
+reward decreases -> -(urgency) added to reward
+
+
+energy 
+start 0 and decreases by 1 if agent moves away from goal 
+|
+stamina= 0-energy
+magnitude increases
+reward decreases -> -(stamina) is added to reward
+
+
+collision
+ideal 0 and decreases by  1 for each collision
+|
+pain : ideal-collision
+magnitude increases
+reward decreases  -> -(pain) added to reward 
+
+
+WEIGHT FACTORS (based on graph estimation , further experimentation required)
+-----------------
+
+weight factor for urgency:
+As fraction of distance to be covered(i.e, x= estimated dist to goal/total dist to goal at start) ix x>1 round it to 1 ) increases , weight also increases for our drive 
+weight factor: 2*(1-\{1+x})
+
+
+weight factor for pain:
+x=no of collisions in past time steps / total time steps
+weight factor =x 
+i.e , y=x suits it :)
+
+
+weight for stamina:
+0 ,1   
+
+METRICS
+-----------------------------------------------------------------------
+I.Avg score 
+II.Avg collision ratio , where collision ratio= no of colllisions/total no of moves 
+III.success ratio : no of times goal reached/total no of games
+--------Develop a metric that shows how fast goal is reached ???????-------
+
+calculate each of these metrics for these cases :
+
+Normal RL 
+RL with all emotions 
+RL with pain  only 
+RL with stamina only 
+RL with urgency only 
+RL with both stamina and pain
+RL with both stamina and urgency 
+RL with both urgency and pain 
+
+
+
+
+
+
+
+
+
+
